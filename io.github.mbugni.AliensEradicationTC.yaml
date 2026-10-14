@@ -1,6 +1,6 @@
 app-id: io.github.mbugni.AliensEradicationTC
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: aliens-eradication-tc.sh
 finish-args:
@@ -62,10 +62,6 @@ modules:
         url: https://github.com/UZDoom/UZDoom
         tag: 4.14.3
         commit: 1cb7598afadbe7ffe753b2eaf1b887e58e988036
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/UZDoom/UZDoom/releases/latest
-          tag-query: .tag_name
 
   - name: freedoom2
     buildsystem: simple
@@ -84,8 +80,8 @@ modules:
         sha256: e26cdba6690d10c652a87f7dc19c22b46e3e7c8e828e86095244c2c457b81199
       - type: git
         url: https://github.com/mbugni/AliensEradicationTC
-        tag: 2026.07.21
-        commit: 4608b57106e089986c92b3b438c3e46bebf8ecc7
+        tag: 2026.10.14
+        commit: 059e895e4d35e1ac7703547975e004ddb78b492e
     build-commands:
       # Patch flashlight script for UZDoom compatibility
       - cp patches/ZSCRIPT.txt .
@@ -94,7 +90,7 @@ modules:
       - install -Dm 644 ERADICATION_MAPSET_2_0.wad -t /app/share/games/uzdoom
       - install -Dm 644 ALIENS_ERADICATION_TC_2_0.pk3 -t /app/share/games/uzdoom
       - install -Dm 644 aliens-eradication-tc.ini -t /app/share/games/uzdoom
-      - install -Dm 644 ${FLATPAK_ID}.appdata.xml -t /app/share/appdata
+      - install -Dm 644 ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo
       - install -Dm 644 ${FLATPAK_ID}.desktop -t /app/share/applications
       - install -Dm 644 ${FLATPAK_ID}.png -t /app/share/icons/hicolor/256x256/apps
       - install -Dm 755 aliens-eradication-tc.sh -t /app/bin
